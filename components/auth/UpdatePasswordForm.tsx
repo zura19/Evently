@@ -9,7 +9,11 @@ import { newPasswordAction } from "@/actions/authActions";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 
-export function NewPasswordForm({ resetToken }: { resetToken: string }) {
+export default function UpdatePasswordForm({
+  resetToken,
+}: {
+  resetToken: string;
+}) {
   const router = useRouter();
   const { register, formState, handleSubmit } = useForm<
     z.infer<typeof newPasswordSchema>

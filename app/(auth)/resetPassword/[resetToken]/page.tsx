@@ -1,4 +1,4 @@
-import { NewPasswordForm } from "@/components/auth/NewPasswordForm";
+import UpdatePasswordForm from "@/components/auth/UpdatePasswordForm";
 import Timer from "@/components/Timer";
 import { Button } from "@/components/ui/button";
 import User from "@/models/userModel";
@@ -49,10 +49,10 @@ export default async function page({
 
       <div className="flex items-center justify-center text-sm  gap-1">
         <p>token expires in:</p>
-        <Timer date={user.resetTokenExpiresAt} />
+        <Timer date={user.resetTokenExpiresAt.toISOString()} />
       </div>
 
-      <NewPasswordForm resetToken={resetToken} />
+      <UpdatePasswordForm resetToken={resetToken} />
     </div>
   );
 }
